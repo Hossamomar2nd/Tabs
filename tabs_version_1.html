@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <style>
+      .tab_containers {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .button_containers {
+        display: flex;
+        gap: 10px;
+      }
+
+      .first_tab_contents,
+      .second_tab_contents,
+      .third_tab_contents,
+      .fourth_tab_contents,
+      .home_contents {
+        background-color: violet;
+        display: grid;
+        border: 1px solid #000000;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        border-radius: 10px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab_containers">
+      <div class="button_containers">
+        <button onclick="openTab('first')">First Tab</button>
+        <button onclick="openTab('second')">Second Tab</button>
+        <button onclick="openTab('third')">Third Tab</button>
+        <button onclick="openTab('fourth')">Fourth Tab</button>
+      </div>
+      <div class="home_contents" id="home" >
+        <h2>Home</h2>
+        <p>Home Content</p>
+      </div>
+      <div class="first_tab_contents" id="first">
+        <h2>First Tab</h2>
+        <p>First Tab Content</p>
+      </div>
+
+      <div class="second_tab_contents" id="second">
+        <h2>Second Tab</h2>
+        <p>Second Tab Content</p>
+      </div>
+
+      <div class="third_tab_contents" id="third">
+        <h2>Third Tab</h2>
+        <p>Third Tab Content</p>
+      </div>
+
+      <div class="fourth_tab_contents" id="fourth">
+        <h2>Fourth Tab</h2>
+        <p>Fourth Tab Content</p>
+      </div>
+    </div>
+
+    <script>
+      function openTab(id) {
+        const tabs = document.querySelectorAll(
+          ".first_tab_contents, .second_tab_contents, .third_tab_contents, .fourth_tab_contents, .home_contents",
+        );
+        if (id == "home") {
+          tabs.forEach((tab) => {
+            if (tab.id === id) {
+              tab.style.display = "block";
+            } else {
+              tab.style.display = "none";
+            }
+          });
+          return;
+        }
+        tabs.forEach((tab) => {
+          if (tab.id === id) {
+            tab.style.display = "block";
+          } else {
+            tab.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
